@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExampleApp.InnerPage"
+             Title="InnerPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontAttributes"
+                        Value="Italic"/>
+                <Setter Property="TextDecorations"
+                        Value="Underline"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="I should be underlined and italic because of an implicit style on this Page, and I am. But, I should ALSO be orange because of an implicit style at the App level, but I'm not orange!"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
