@@ -4,10 +4,6 @@
              x:Class="ExampleApp.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="Label">
-                <Setter Property="TextColor"
-                        Value="Orange"/>
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

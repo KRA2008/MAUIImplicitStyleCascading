@@ -1,23 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExampleApp.MainPage"
-             BackgroundColor="White">
+             x:Class="ExampleApp.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="Red"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
 
-            <Label Text="I'm orange because of the implicit style declared at the App level!"/>
+            <Label Text="I'm red because of the implicit style declared at the Page level!"/>
+            <Rectangle WidthRequest="200"
+                       HeightRequest="200"/>
 
-            <Button Text="Tap me to navigate to the inner page"
-                    Clicked="Button_OnClicked"
-                    TextColor="White"/>
+            <VerticalStackLayout>
+                <VerticalStackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Label">
+                            <Setter Property="FontAttributes"
+                                    Value="Italic"/>
+                            <Setter Property="TextDecorations"
+                                    Value="Underline"/>
+                        </Style>
+                    </ResourceDictionary>
+                </VerticalStackLayout.Resources>
+                <Label Text="I should be red because of the implicit style at the Page level, but I'm not! I'm just italic and underlined because of the implicit style declared in my parent layout."/>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 
